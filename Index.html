@@ -3,12 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sadie | Portfolio</title>
+  <title>Sadie | Unity Developer Portfolio</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="favicon.png" />
 </head>
 <body>
+  <!-- Header -->
   <header>
-    <h1>Sadie</h1>
+    <h1 class="logo">Sadie</h1>
     <nav>
       <a href="#about">About</a>
       <a href="#projects">Projects</a>
@@ -16,56 +18,128 @@
     </nav>
   </header>
 
+  <!-- Hero -->
+  <section class="hero">
+    <h1>Sadie Callaghan</h1>
+    <p>Unity Developer | Gameplay Systems & VR/AR</p>
+  </section>
+
   <main>
+    <!-- About -->
     <section id="about">
       <h2>About Me</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis dolorum assumenda aspernatur, illum atque non? Rem sint nobis ex odio? Perspiciatis, deleniti quia? Quibusdam sint iusto mollitia dignissimos reprehenderit assumenda?</p>
+      <p>
+       Hi, I’m Sadie, I'm a Unity Developer with 3 years of experience building games and interactive applications across VR, mobile, and PC. I specialize in C# programming, 
+       Unity’s animation and timeline systems, and creating branching logic that makes interactive stories feel seamless and impactful.
+
+      I’ve worked on everything from VR training simulations to indie game prototypes, contributing systems for physics-based gameplay,
+      and smooth scene management. Whether collaborating with designers, artists, or audio teams, I focus on making interactions clear, transitions polished, 
+      and experiences immersive.
+      </p>
     </section>
 
+    <!-- Projects -->
     <section id="projects">
-        <h2>Video Projects</h2>
-        <p>Here are a few clips from my recent game projects and experiments:</p>
-      
-        <!-- Project 1 -->
-        <article class="video-project">
-          <h3>Ghost Game: Possession Mechanics</h3>
-          <video controls width="100%">
-            <source src="videos/ghost-mechanics.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-          <p>This clip shows off the core gameplay loop of my low-poly ghost game, where the player haunts NPCs to gain XP. It's intentionally silly and stylized, not horror-focused!</p>
-        </article>
-      
-        <!-- Project 2 -->
-        <article class="video-project">
-          <h3>Unity Boss Animation System</h3>
-          <div class="video-embed">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/YOUR_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
-          </div>
-          <p>A breakdown of my boss animation system in Unity. The boss transitions from idle to move states and cycles through fire, claw, and basic attacks — with visual effects tied to state activation.</p>
-        </article>
-      
-        <!-- Project 3 -->
-        <article class="video-project">
-          <h3>Stealth Game: Red Spy Pathfinding</h3>
-          <video controls width="100%">
-            <source src="videos/red-spy-pathfinding.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-          <p>This stealth system involves smart AI behavior where the Red Spy collects keys, navigates locked doors, and retrieves intel — all through waypoint and detector logic in Unity.</p>
-        </article>
-      </section>
-      
+      <h2>Featured Projects</h2>
 
+      <!-- Project 1 -->
+      <article class="video-project">
+        <h3>Scare Tactics</h3>
+        <video controls>
+          <source src="src/ScareTactics.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <p>
+         Scare Tactics is a lighthearted low-poly ghost game where players pick up and throw objects at NPCs to scare them and earn XP.
+          I built a progression system where XP unlocks new levels, and designed NPC interactions so characters react  when objects are thrown 
+          The AI and progression systems were implemented modularly, 
+         making it easy to expand with new NPC types, reactions, and difficulty scaling.
+        </p>
+      </article>
+
+       <!-- Project 2 -->
+      <article class="video-project">
+        <h3> Car Engine Demo</h3>
+        <video controls>
+          <source src="src/EngineDemo.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <p>
+         Car Engine Demo is an interactive training simulation for learning car engine repair.
+          While the original interactions were built for VR, I developed a flexible system that allows the demo to run in either VR or a traditional PC point-and-click mode.
+           By creating a toggle between input methods, I enabled the same repair procedures and scene flow to be experienced across platforms without duplicating core logic.
+          This approach made the project more accessible, easier to test, and adaptable for different hardware setups.
+        </p>
+      </article>
+
+     <!-- Project 3 -->
+<article class="video-project">
+  <h3>AI Combat Demo</h3>
+  
+  <div class="media-side-by-side">
+    <video controls>
+      <source src="src/StateMachine.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+    <figure>
+      <img src="src/AnimationNodes.png" alt="Unity Animator State Machine for Dragon Boss" />
+      <figcaption>Unity Animator state machine: each state (Idle, Patrol, Fire Breath, Enraged) transitions based on health and player distance, keeping the boss logic modular and extensible.</figcaption>
+    </figure>
+  </div>
+
+  <p>
+    This demo showcases a boss encounter where a dragon cycles through different combat states using a modular AI state machine. 
+    The dragon transitions between behaviors like patrol, ranged attack, fire breath, and an enraged phase when its health gets low.
+  </p>
+  <p>
+    Alongside the boss, a support NPC companion dynamically monitors the player’s health. The NPC heals the player when they fall below a threshold and revives
+    them if they die, ensuring the fight feels dynamic and responsive. By structuring the dragon’s behavior around a state machine, the system is scalable and easy to 
+    extend with new attacks, phases, or additional companions.
+  </p>
+</article>
+
+
+      <!-- Project 4 -->
+       <article class="screenshot-project">
+        <h3>Scriptable Dialogue System</h3>
+        <div class="screenshot-gallery">
+          <figure>
+            <img src="src/DialogueInspector.png" alt="DialogueData ScriptableObject in Unity Inspector" />
+            <figcaption>DialogueData asset in the Unity Inspector: Designers can easily author dialogue lines, conditions, and player choices without coding.</figcaption>
+          </figure>
+          <figure>
+            <img src="src/CodeSnippetScriptableObject.png" alt="DialogueData ScriptableObject code" />
+            <figcaption>DialogueData ScriptableObject: Reusable data-driven architecture for branching dialogue.</figcaption>
+          </figure>
+          <figure>
+            <img src="src/CodeSnippetStart.png" alt="DialogueManager StartDialogue method code" />
+            <figcaption>DialogueManager’s <code>StartDialogue()</code> method: handles conditional branching so NPC conversations adapt to player state.</figcaption>
+          </figure>
+        </div>
+        <p>
+          This tool enables branching NPC conversations in Unity, built using ScriptableObjects for modular data storage and a DialogueManager that processes conditions, player choices, and NPC reactions. 
+          By separating dialogue data from logic, the system is reusable, designer-friendly, and easily extended for larger narrative projects.
+        </p>
+        
+      </article>
+
+
+    
+    </section>
+
+    <!-- Contact -->
     <section id="contact">
       <h2>Contact</h2>
       <p>Email: <a href="mailto:sadiecallaghan15@gmail.com">sadiecallaghan15@gmail.com</a></p>
-      <p>LinkedIn: <a href="https://linkedin.com/in/yourprofile">linkedin.com/in/yourprofile</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/sadie-callaghan-0b1349332/" target="_blank">linkedin.com/in/yourprofile</a></p>
+      
     </section>
   </main>
 
+  <!-- Footer -->
   <footer>
-    <p>© 2025 Sadie. All rights reserved.</p>
+    <p>© 2025 Sadie Callaghan. All rights reserved.</p>
   </footer>
 </body>
 </html>

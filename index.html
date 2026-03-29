@@ -3,140 +3,187 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sadie | Unity Developer Portfolio</title>
+  <title>Sadie Callaghan | Gameplay Programmer</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="icon" type="image/png" href="favicon.png" />
 </head>
 <body>
-  <!-- Header -->
   <header>
-    <h1 class="logo">Sadie</h1>
+    <h1>Sadie Callaghan</h1>
     <nav>
       <a href="#about">About</a>
       <a href="#projects">Projects</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
-
-  <!-- Hero -->
-  <section class="hero">
-    <h1>Sadie Callaghan</h1>
-    <p>Unity Developer | Gameplay Systems & VR/AR</p>
-  </section>
-
+ 
   <main>
-    <!-- About -->
+ 
+    <!-- ABOUT -->
     <section id="about">
       <h2>About Me</h2>
       <p>
-       Hi, I’m Sadie, I'm a Game Developer with 3 years of experience building games and interactive applications across VR, mobile, and PC. I specialize in C# programming, 
-       Unity’s animation and timeline systems, and creating branching logic that makes interactive stories feel seamless and impactful.
-
-      I’ve worked on everything from VR training simulations to indie game prototypes, contributing systems for physics-based gameplay,
-      and smooth scene management. Whether collaborating with designers, artists, or audio teams, I focus on making interactions clear, transitions polished, 
-      and experiences immersive.
+        I'm a gameplay programmer with experience shipping games and interactive applications across PC, VR, and mobile.
+        I work in both Unity and Unreal Engine 5, with a focus on building systems that are modular, designer-friendly,
+        and fun to interact with such as ability systems, AI state machines, VR interactions, and branching dialogue.
+      </p>
+      <p>
+        Currently I'm contributing to an indie project at Fear Elements Studio, building a data-driven ability system
+        in UE5 Blueprints with cooldown management, state transitions, and input routing. On the professional side
+        I work as a developer at Truck Part Solutions, where shipping real production code every day has sharpened
+        how I think about architecture and maintainability.
+      </p>
+      <p>
+        I care about the craft and in particular, modular design and minimal interdependencies. Systems should do one thing well, be easy to swap out and not break everything else when they change. That principle shows up in everything from the ability system I'm building at Fear Elements to the dialogue tool and AI state machine in my projects below. It also shapes how I collaborate with designers and artists. When systems are clean and data-driven, non-programmers can actually use them without needing coding expertise. 
       </p>
     </section>
-
-    <!-- Projects -->
+ 
+    <!-- PROJECTS -->
     <section id="projects">
-      <h2>Featured Projects</h2>
-
-      <!-- Project 1 -->
+      <h2>Projects</h2>
+ 
+      <!-- UE5 Ability System — WIP -->
+      <article class="video-project">
+        <h3>Ability System <span class="wip-badge">In Development</span></h3>
+        <div class="project-meta">
+          <span class="tag">Unreal Engine 5</span>
+          <span class="tag">Blueprints</span>
+          <span class="role">Role: Gameplay Programmer (volunteer) · Fear Elements Studio</span>
+        </div>
+        <p>
+          A data-driven ability system built in UE5 Blueprints for an indie action game at Fear Elements Studio.
+          The system handles cooldown management, state transitions, validity checks, and input routing through
+          a component-based architecture so new abilities can be added without modifying existing ones.
+          Designed to be extensible by designers without requiring Blueprint changes to core logic.
+        </p>
+        <p class="wip-note">Screenshots and video coming as the project progresses.</p>
+      </article>
+ 
+      <!-- Scare Tactics -->
       <article class="video-project">
         <h3>Scare Tactics</h3>
-        <video controls>
+        <div class="project-meta">
+          <span class="tag">Unity</span>
+          <span class="tag">C#</span>
+          <span class="tag">PC</span>
+          <span class="role">Role: Solo Programmer</span>
+        </div>
+        <video controls width="100%">
           <source src="src/ScareTactics.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
         <p>
-         Scare Tactics is a lighthearted low-poly ghost game where players pick up and throw objects at NPCs to scare them and earn XP.
-          I built a progression system where XP unlocks new levels, and designed NPC interactions so characters react  when objects are thrown 
-          The AI and progression systems were implemented modularly, 
-         making it easy to expand with new NPC types, reactions, and difficulty scaling.
+          A lighthearted low-poly ghost game where players throw objects at NPCs to scare them and earn XP.
+          I built the full progression and NPC reaction systems, designing them modularly so new NPC types,
+          reactions, and difficulty tiers could be added without touching core logic.
+        </p>
+        <p>
+          Scare Tactics tracks XP based on how many NPCs you scare, with level progression unlocking the ability to pick up larger objects. NPCs have distinct dialogue states depending on whether you've interacted with them before and react contextually when objects are thrown at them giving the game a simple but satisfying loop that rewards exploration and escalation.
         </p>
       </article>
-
-       <!-- Project 2 -->
+ 
+   <article class="video-project">
+      <h3>State Machine Combat Demo</h3>
+      <div class="project-meta">
+        <span class="tag">Unity</span>
+        <span class="tag">C#</span>
+        <span class="tag">AI / State Machine</span>
+        <span class="role">Role: Solo Programmer</span>
+      </div>
+      <video controls width="100%">
+        <source src="src/StateMachine.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+     <figure style="text-align: center;">
+      <img src="src/AnimationNodes.png" alt="Unity Animator State Machine for Dragon Boss" style="width: 100%; display: block; margin: 0 auto;" />
+      <figcaption>Unity Animator state machine: each state transitions based on health and player distance, keeping the boss logic modular and extensible.</figcaption>
+    </figure>
+      <p>
+        A dragon boss encounter built around a modular AI state machine. The dragon cycles through Idle, Patrol,
+        Ranged Attack, Fire Breath, and an Enraged phase transitioning based on player distance and remaining
+        health thresholds. Each state is self-contained, making it straightforward to add new attacks or phases
+        without reworking existing behaviour.
+      </p>
+      <p>
+        A support NPC companion runs a parallel monitoring loop: healing the player when health drops below a
+        threshold and triggering a revive sequence on death. The two systems operate independently but respond
+        to the same shared game state, keeping the fight dynamic without tight coupling.
+      </p>
+    </article>
+ 
+      <!-- Car Engine Demo -->
       <article class="video-project">
-        <h3> Car Engine Demo</h3>
-        <video controls>
+        <h3>Car Engine Training Simulation</h3>
+        <div class="project-meta">
+          <span class="tag">Unity</span>
+          <span class="tag">C#</span>
+          <span class="tag">VR + PC</span>
+          <span class="role">Role: Sole Programmer, collaborated with designers · Illumia Labs</span>
+        </div>
+        <video controls width="100%">
           <source src="src/EngineDemo.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
         <p>
-         Car Engine Demo is an interactive training simulation for learning car engine repair.
-          While the original interactions were built for VR, I developed a flexible system that allows the demo to run in either VR or a traditional PC point-and-click mode.
-           By creating a toggle between input methods, I enabled the same repair procedures and scene flow to be experienced across platforms without duplicating core logic.
-          This approach made the project more accessible, easier to test, and adaptable for different hardware setups.
+          An interactive training simulation for learning car engine repair through hands-on assembly and disassembly.
+          The original brief was VR-only, but I designed the interaction layer as an abstraction so the same repair
+          logic and scene flow could run in either VR or a traditional PC point-and-click mode  toggled at runtime
+          with no duplicated code.
         </p>
-      </article>
-
-     <!-- Project 3 -->
-<article class="video-project">
-  <h3>AI Combat Demo</h3>
-  
-  <div class="media-side-by-side">
-    <video controls>
-      <source src="src/StateMachine.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-
-    <figure>
-      <img src="src/AnimationNodes.png" alt="Unity Animator State Machine for Dragon Boss" />
-      <figcaption>Unity Animator state machine: each state (Idle, Patrol, Fire Breath, Enraged) transitions based on health and player distance, keeping the boss logic modular and extensible.</figcaption>
-    </figure>
-  </div>
-
-  <p>
-    This demo showcases a boss encounter where a dragon cycles through different combat states using a modular AI state machine. 
-    The dragon transitions between behaviors like patrol, ranged attack, fire breath, and an enraged phase when its health gets low.
-  </p>
-  <p>
-    Alongside the boss, a support NPC companion dynamically monitors the player’s health. The NPC heals the player when they fall below a threshold and revives
-    them if they die, ensuring the fight feels dynamic and responsive. By structuring the dragon’s behavior around a state machine, the system is scalable and easy to 
-    extend with new attacks, phases, or additional companions.
-  </p>
-</article>
-
-
-      <!-- Project 4 -->
-       <article class="screenshot-project">
-        <h3>Scriptable Dialogue System</h3>
-        <div class="screenshot-gallery">
-          <figure>
-            <img src="src/DialogueInspector.png" alt="DialogueData ScriptableObject in Unity Inspector" />
-            <figcaption>DialogueData asset in the Unity Inspector: Designers can easily author dialogue lines, conditions, and player choices without coding.</figcaption>
-          </figure>
-          <figure>
-            <img src="src/CodeSnippetScriptableObject.png" alt="DialogueData ScriptableObject code" />
-            <figcaption>DialogueData ScriptableObject: Reusable data-driven architecture for branching dialogue.</figcaption>
-          </figure>
-          <figure>
-            <img src="src/CodeSnippetStart.png" alt="DialogueManager StartDialogue method code" />
-            <figcaption>DialogueManager’s <code>StartDialogue()</code> method: handles conditional branching so NPC conversations adapt to player state.</figcaption>
-          </figure>
-        </div>
         <p>
-          This tool enables branching NPC conversations in Unity, built using ScriptableObjects for modular data storage and a DialogueManager that processes conditions, player choices, and NPC reactions. 
-          By separating dialogue data from logic, the system is reusable, designer-friendly, and easily extended for larger narrative projects.
+          The abstraction meant QA could test the full experience on a laptop without a headset, cutting iteration
+          time significantly. Scene management, procedure sequencing, and interaction feedback all sit behind the
+          same interface regardless of input mode.
         </p>
-        
       </article>
-
-
-    
+ 
+      <!-- Scriptable Dialogue System -->
+      <article class="video-project">
+        <h3>Scriptable Dialogue System</h3>
+        <div class="project-meta">
+          <span class="tag">Unity</span>
+          <span class="tag">C#</span>
+          <span class="tag">Tool / System</span>
+          <span class="role">Role: Solo Programmer</span>
+        </div>
+        <figure>
+          <img src="src/DialogueInspector.png" alt="DialogueData ScriptableObject in Unity Inspector" />
+          <figcaption>DialogueData asset in the Unity Inspector: designers can author dialogue lines, conditions, and player choices without coding.</figcaption>
+        </figure>
+        <figure>
+          <img src="src/CodeSnippetScriptableObject.png" alt="DialogueData ScriptableObject code" />
+          <figcaption>DialogueData ScriptableObject: reusable data-driven architecture for branching dialogue.</figcaption>
+        </figure>
+        <figure>
+          <img src="src/CodeSnippetStart.png" alt="DialogueManager StartDialogue method code"  />
+          <figcaption>DialogueManager's <code>StartDialogue()</code> method: handles conditional branching so NPC conversations adapt to player state.</figcaption>
+        </figure>
+        <p>
+          A designer-friendly branching dialogue tool built in Unity using ScriptableObjects for data storage and
+          a DialogueManager that processes conditions, player choices, and NPC reactions at runtime. Separating
+          dialogue data from logic means writers and designers can author full conversation trees in the Inspector
+          without writing code.
+        </p>
+        <p>
+          Conditions are evaluated dynamically, NPC lines adapt based on player state, prior choices, or world flags
+          making the system suitable for non-linear narratives. The architecture is reusable across projects;
+          dropping in a new DialogueData asset is all it takes to wire up a new character.
+        </p>
+      </article>
+ 
     </section>
-
-    <!-- Contact -->
+ 
+    <!-- CONTACT -->
     <section id="contact">
       <h2>Contact</h2>
       <p>Email: <a href="mailto:sadiecallaghan15@gmail.com">sadiecallaghan15@gmail.com</a></p>
-      <p>LinkedIn: <a href="https://www.linkedin.com/in/sadie-callaghan-0b1349332/" target="_blank">linkedin.com/in/SadieCallaghan</a></p>
-      
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/sadie-callaghan-0b1349332/">linkedin.com/in/sadie-callaghan</a></p>
+      <p>GitHub: <a href="https://github.com/">github.com/sadiecallaghan</a></p>
     </section>
-  </main>
-
  
+  </main>
+ 
+  <footer>
+    <p>© 2025 Sadie Callaghan. Built with too much coffee</p>
+  </footer>
 </body>
 </html>

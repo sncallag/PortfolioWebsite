@@ -166,3 +166,54 @@ figcaption {
   font-style: italic;
   max-width: 100%;
 }
+
+.deadair-project .deadair-video {
+  margin: 1.25rem 0;
+}
+
+.deadair-project .deadair-video video {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+.deadair-project .deadair-video figcaption {
+  margin-top: 0.5rem;
+}
+
+.screenshot-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin: 1.5rem 0;
+}
+
+.screenshot-gallery figure {
+  margin: 0;
+  min-width: 0;
+}
+
+.screenshot-gallery img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid #e0dcd3;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.screenshot-gallery figcaption {
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  color: #888;
+}
+
+@media (max-width: 700px) {
+  .screenshot-gallery {
+    grid-template-columns: 1fr;
+  }
+}

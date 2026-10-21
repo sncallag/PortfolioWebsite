@@ -41,22 +41,85 @@
     <section id="projects">
       <h2>Projects</h2>
  
-      <!-- UE5 Ability System — WIP -->
-      <article class="video-project">
-        <h3>Ability System <span class="wip-badge">In Development</span></h3>
-        <div class="project-meta">
-          <span class="tag">Unreal Engine 5</span>
-          <span class="tag">Blueprints</span>
-          <span class="role">Role: Gameplay Programmer (volunteer) · Fear Elements Studio</span>
-        </div>
-        <p>
-          A data-driven ability system built in UE5 Blueprints for an indie action game at Fear Elements Studio.
-          The system handles cooldown management, state transitions, validity checks, and input routing through
-          a component-based architecture so new abilities can be added without modifying existing ones.
-          Designed to be extensible by designers without requiring Blueprint changes to core logic.
-        </p>
-        <p class="wip-note">Screenshots and video coming as the project progresses.</p>
-      </article>
+            <!-- DeadAir -->
+      <article class="video-project deadair-project">
+  <h3>DeadAir</h3>
+
+  <div class="project-meta">
+    <span class="tag">Unreal Engine 5.3</span>
+    <span class="tag">C++</span>
+    <span class="tag">UMG / UI</span>
+    <span class="tag">Narrative / Rhythm</span>
+    <span class="role">Role: Solo Developer</span>
+  </div>
+
+  <p>
+    A narrative-driven game set in a late-night radio station, where the player hosts a radio show,
+    answers mysterious calls, and helps callers through branching conversations. As the night progresses,
+    seemingly ordinary conversations begin to reveal something more unsettling.
+  </p>
+
+  <figure class="deadair-video">
+    <video controls preload="metadata">
+      <source src="src/DeadAirGameplay.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <figcaption>
+      DeadAir gameplay: exploring the radio station and interacting with its systems.
+    </figcaption>
+  </figure>
+
+  <p>
+    I built the gameplay systems in Unreal Engine 5.3 using C++, including component-based interactions,
+    a data-driven dialogue system, branching player choices, and interactive UI. Dialogue is authored
+    through reusable data assets, keeping narrative content separate from gameplay logic.
+  </p>
+
+  <figure class="deadair-video">
+    <video controls preload="metadata">
+      <source src="src/DeadAirRhythmGameplay.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <figcaption>
+      Rhythm gameplay: a music-based gameplay sequence integrated into the radio-show loop.
+    </figcaption>
+  </figure>
+
+  <p>
+    The core gameplay loop connects exploration, radio conversations, and rhythm-based music sequences.
+    I also implemented the user interface in UMG, with responsive dialogue presentation and player-choice
+    interactions designed to support the game's narrative pacing.
+  </p>
+
+  <h4>Technical Highlights: Procedural Beatmap Generation</h4>
+
+  <p>
+    The rhythm system uses audio onset matching to align gameplay notes with musical events.
+    Difficulty-based beatmap generation adjusts gameplay patterns to create different levels of challenge.
+  </p>
+
+  <div class="screenshot-gallery beatmap-gallery">
+    <figure>
+      <img
+        src="src/BeatmapOnsetMatching.png"
+        alt="Code screenshot showing audio onset matching and beat-grid timing">
+      <figcaption>
+        <strong>Audio Onset Matching:</strong>
+        Matching detected audio onsets to the beat grid to align gameplay notes with the music.
+      </figcaption>
+    </figure>
+
+    <figure>
+      <img
+        src="src/BeatmapDifficultyGeneration.png"
+        alt="Code screenshot showing difficulty-based procedural beatmap generation">
+      <figcaption>
+        <strong>Difficulty-Based Generation:</strong>
+        Generating beatmap patterns based on the selected difficulty.
+      </figcaption>
+    </figure>
+  </div>
+</article>
  
       <!-- Scare Tactics -->
       <article class="video-project">
